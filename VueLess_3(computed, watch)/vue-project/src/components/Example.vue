@@ -8,7 +8,7 @@ watch позволяет следить за моделькой и выполн�
 Метод mounted позволяет реализовать побочный код в момент монтирования компонента
 <template>
     <div>
-        <h2>User</h2>
+        <h2>Example</h2>
         <input v-model="name"/>
         <input v-model="lastName"/>
         <p>{{ fullName }}</p>
@@ -44,12 +44,12 @@ watch позволяет следить за моделькой и выполн�
             lastName(){
                 console.log(this.lastName, 'change lastName')
             },
-            // fulNameWatch(){
-            //     console.log(this.fulNameWatch, 'chanhe fullName')
-            // }
+            fulNameWatch(){
+                console.log(this.fulNameWatch, 'change fullName')
+            }
         },
         mounted(){
-            this.name = 'AHAHHAHAHA'
+            this.name = 'Tigran'
         }
     }
 </script>
