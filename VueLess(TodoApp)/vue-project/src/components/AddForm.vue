@@ -1,15 +1,16 @@
 <template>
-    <form>
-        <select class="select_days">
+    <form @submit.prevent="addNewTask">
+        <select v-model="day" required class="select_days">
+            <option value="" disabled selected>Выберите день</option>
             <option v-for="(elem, ind) in days" :key="ind" :value="elem">
                 {{ elem }}
             </option>
         </select>
-        <select class="select_priority">
+        <select v-model="priority" value="12" class="select_priority">
             <option :value="true">Важная</option>
             <option :value="false">Не важная</option>
         </select>
-        <input class="todo_title"/>
+        <input v-model="title" class="todo_title"/>
         <input class="submit_btn" type="submit" value="Добавить"/>
     </form>
 </template>
@@ -18,9 +19,19 @@
     export default {
         data(){
             return{
-                days: ["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"]
+                days: ["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"],
+                title: '',
+                day: '',
+                priority: ''
             }
-        }
+        },
+        methods: {
+            addNewTask(){
+                this.$emit('addNewTask', this.day, this.priority, this.title)
+            }
+        },
+        emits: ['addNewTask'],
+
     }
 </script>
 

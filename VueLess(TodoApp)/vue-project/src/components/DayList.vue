@@ -5,6 +5,8 @@
             :day_todos="day.day_todos"
             :id_day="day.id_day"
             :day_text="day.day_text"
+            @deleteDay="deleteDay"
+            @deleteTask="deleteTask"
         >
         </day-item>
     </div>
@@ -19,6 +21,15 @@ import DayItem from './DayItem.vue';
         },
         props: {
             todos: Array
+        },
+        emits: ['deleteDay', 'deleteTask'],
+        methods: {
+            deleteDay(idDay){
+                this.$emit('deleteDay', idDay)
+            },
+            deleteTask(idDay, id){
+                this.$emit('deleteTask', idDay, id)
+            }
         }
     }
 </script>

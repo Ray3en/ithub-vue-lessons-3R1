@@ -9,10 +9,12 @@
                     :title="todo.title"
                     :id="todo.id"
                     :priority="todo.priority"
+                    :id_day="id_day"
+                    @deleteTask="deleteTask"
             >
 
             </todo-item>
-            <button class="x_day">x</button>
+            <button @click="deleteDay" class="x_day">x</button>
 
         </div>
     </div>
@@ -29,8 +31,17 @@ import TodoItem from './TodoItem.vue';
             id_day: Number,
             day_text: String,
             day_todos: Array
+        },        
+        emits: ['deleteDay','deleteTask'],
+        methods: {
+            deleteDay(){
+                this.$emit('deleteDay', this.id_day)
+            },
+            deleteTask(idDay, id){
+                this.$emit('deleteTask', idDay, id)
+            }
         }
-    }
+}
 </script>
 
 <style>

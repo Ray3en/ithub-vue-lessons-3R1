@@ -25,16 +25,46 @@ export default {
           day_todos: [
             { id: 4, title: 'Выучить стихотворение ', priority: true },
             { id: 5, title: 'Выучить', priority: true },
-            { id: 6, title: 'Стихотворение', priority: false },
-            { id: 6, title: 'Стихотворение', priority: false },
-            { id: 6, title: 'Стихотворение', priority: false },
-            { id: 6, title: 'Стихотворение', priority: false },
-            { id: 6, title: 'Стихотворение', priority: false },
-            { id: 6, title: 'Стихотворение', priority: false },
-            { id: 6, title: 'Стихотворение', priority: false },
+            { id: 6, title: 'Стихотворение', priority: false }
           ]
-        },
+        }
       ]
+    }
+  },
+  methods: {
+    deleteDay(idDay){
+      this.todos = this.todos.filter(el => el.id_day !== idDay)
+    },
+    deleteTask(idDay, id){
+      let findDay = this.todos.find(el => el.id_day === idDay)
+      findDay.day_todos = findDay.day_todos.filter(el => el.id !== id)
+      if (!findDay.day_todos.length){
+        this.deleteDay(idDay)
+      }
+    },
+    addNewTask(day,priority,title){
+      let days = ["ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"]
+
+      let newTask = {
+        id: Date.now(),
+        priority,
+        title
+      }
+
+      let findDay = this.todos.find(el => el.day_text === day)
+      if (findDay){
+        findDay.day_todos.push(newTask)
+        findDay.day_todos.sort((a,b) => b.priority - a.priority)
+      } else {
+        let newDay = {
+          id_day: days.indexOf(day)+1,
+          day_text: day,
+          day_todos: [newTask]
+        }
+        this.todos.push(newDay)
+        this.todos.sort((a,b) => a.id_day - b.id_day)
+      }
+
     }
   }
 }
@@ -42,8 +72,8 @@ export default {
 
 <template>
   <div class="container">
-    <add-form></add-form>
-    <day-list :todos="todos"></day-list>
+    <add-form @addNewTask="addNewTask"></add-form>
+    <day-list @deleteTask="deleteTask" @deleteDay="deleteDay" :todos="todos"></day-list>
   </div>
 </template>
 
