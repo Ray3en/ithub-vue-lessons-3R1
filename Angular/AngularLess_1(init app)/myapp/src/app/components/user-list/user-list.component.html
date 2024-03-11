@@ -1,0 +1,16 @@
+<div class="user_class">
+    <h2>User List</h2>
+    <ul>
+        @for(user of users; track user.id){
+            <li>{{user.name}}</li>
+        }
+    </ul>
+    
+    <!-- Картинки -->
+    <img width="300" src="/assets/1.jpg"/>
+    <img width="300" [src]="srcImage"/>
+
+
+    <p>isShow = {{isShow}}</p>
+    <p>name = {{name}}</p>
+</div>

@@ -1,0 +1,40 @@
+<div 
+    [class]="name" 
+    [style.color]="(number > 9) ? 'red' : 'blue'" 
+    [id]="'elem_'+number"
+>
+    <!-- Условное ветвление (старый) -->
+    <!-- <h2  *ngIf="number > 10">Hello angular!</h2> -->
+
+    @if (number > 10){
+        <h2>Hello angular!</h2>
+    } 
+    @else {
+        <h2>Test value</h2>
+    }
+
+    <!-- Цикл -->
+    <!-- старой подход -->
+    <!-- <ul>
+        <li *ngFor="let elem of array; let i = index">
+            {{ elem }}
+        </li>
+    </ul> -->
+
+    <!-- Новая форма записи -->
+    <ul>
+        @for (elem of array; track $index;){
+            <li> {{elem}} </li>
+        } 
+        @empty {
+            <li>empty</li>
+        }
+    </ul>
+
+    <app-user-list  
+        [users]='users'
+        [isShow]="isShow"
+        [name]="name"
+    />
+    <app-number [number]="number"/>
+</div>
