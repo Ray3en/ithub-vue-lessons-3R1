@@ -1,0 +1,19 @@
+.todo_card{
+    display: flex;
+    flex-direction: column;
+    outline: 2px solid black;
+
+    padding: 10px;
+    margin: 20px 180px;
+    box-shadow: 5px 5px 15px black;
+}
+
+.input_elem > input {
+    outline: 2px solid black;
+    box-shadow: 5px 5px 15px black;
+}
+
+.input_elem {
+    display: flex;
+    justify-content: center;
+}

@@ -1,0 +1,18 @@
+<div>
+    <div>
+        <input [(ngModel)]="input_data"/>
+        <p>{{ input_data }}</p>
+    </div>
+    <div>
+        <textarea [(ngModel)] = 'text_area_data'></textarea>
+        <p>{{ text_area_data }}</p>
+    </div>
+    <div>
+        <select [(ngModel)] = 'select_data'>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+        <p>{{ select_data }}</p>
+    </div>
+</div>

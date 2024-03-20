@@ -1,0 +1,25 @@
+<div>
+    <h1>Event example</h1>
+    <button (click)="clickHandle()">Click!</button>
+
+    <h1>Counter</h1>
+    <p>{{count}}</p>
+    <button (click)="increment()" >increment!</button>
+
+    <h1>Key Event</h1>
+    <input (keydown.enter)="keyHandle($event)"/>
+
+    <form (submit)="clickHandle(); $event.preventDefault()">
+        <input/>
+        <input type="submit"/>
+    </form>
+
+    <div>
+        <button (click)="addDate()">Add Date</button>
+        <ul>
+            @for(elem of dates; track $index){
+                <li>{{elem | date: 'dd.MM:yyyy'}}</li>
+            }
+        </ul>
+    </div>
+</div>

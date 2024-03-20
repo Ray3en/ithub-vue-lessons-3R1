@@ -1,0 +1,16 @@
+<div class="form">
+    <input placeholder="name" [(ngModel)]="name">
+    <input placeholder="age"  [(ngModel)]="age">
+    <button (click)="addNewUser()">Add new user</button>
+    <button (click)="deleteLastUser()">Delete last user</button>
+</div>
+<div>
+    @for(user of users; track user.id){
+        <app-user-card
+            [id]="user.id"
+            [name]="user.name"
+            [age]="user.age"
+            (deleteUserById)="deleteUserById($event)"
+        />
+    }
+</div>

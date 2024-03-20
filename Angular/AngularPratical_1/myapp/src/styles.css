@@ -1,0 +1,14 @@
+.users_wrapper{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    gap: 50px
+}
+
+.user_item{
+    padding: 15px;
+    border: 1px solid black;
+    width: 300px;
+
+    border-radius: 15px;
+}

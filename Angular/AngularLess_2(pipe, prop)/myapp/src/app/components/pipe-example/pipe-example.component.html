@@ -1,0 +1,21 @@
+<div>
+  <div>
+    <h1>{{ title }}</h1>
+    <p>{{ title | lowercase}}</p>
+    <p>{{ title | uppercase}}</p>
+    <p>{{ title | initCap}}</p>
+  </div>
+  <div>
+    <h1>{{ currentDate }}</h1>
+    <p>{{ currentDate | date}}</p>
+    <p>{{ currentDate | date: 'yyyy-MM-dd'}}</p>
+    <p>{{ currentDate | date | uppercase}}</p>
+  </div>
+  <div>
+    <h1>{{ price }}</h1>
+    <p>{{ price | currency }}</p>
+    <p>{{ price | currency: 'EUR' : 'symbol'}}</p>
+    <p>{{ price | percent: '1.2-5'}}</p>
+    <p>{{ price | number: '1.1-1'}}</p>
+  </div>    
+</div>
