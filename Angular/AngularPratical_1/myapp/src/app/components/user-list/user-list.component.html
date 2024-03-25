@@ -1,5 +1,5 @@
 <div class="users_wrapper">
-    @for(user of usersService.users; track user.id){
+    @for(user of usersService.computedUsers(); track user.id){
         <app-user-item
             [name]="user.name"
             [username]="user.username"
@@ -8,3 +8,6 @@
         />
     }
 </div>
+
+
+''

@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { UserListComponent } from './components/user-list/user-list.component';
-import { DataFormComponent } from './components/data-form/data-form.component';
+import { TodoListComponent } from './components/todo-list/todo-list.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, UserListComponent, DataFormComponent],
+  imports: [CommonModule, RouterOutlet, TodoListComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

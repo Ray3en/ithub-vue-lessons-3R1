@@ -1,0 +1,12 @@
+.todo_wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    gap: 50px
+}
+
+.todo_wrapper > div {
+    border: 1px solid black;
+    padding: 25px;
+    border-radius: 15px;
+}

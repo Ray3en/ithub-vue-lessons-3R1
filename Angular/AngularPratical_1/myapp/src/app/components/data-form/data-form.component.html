@@ -1,0 +1,20 @@
+<div class="data_form">
+    <label>
+        Serach by name
+    </label>
+    <input [(ngModel)]="userService.nameValue"/>
+    <hr>
+    <label>
+        Serach by domen email
+    </label>
+    <select>
+        <option>net</option>
+        <option>org</option>
+        <option>tv</option>
+    </select>
+</div>
+
+<!-- 
+    Реализовать автоматический подбор option для всех возможных доменных зон (почта пользователя)
+    Почта пользователей доступна в массиве this.users. Домены не должны дублироваться в списке select
+ -->

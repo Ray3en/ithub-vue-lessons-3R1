@@ -12,3 +12,17 @@
 
     border-radius: 15px;
 }
+
+
+.data_form{
+    margin: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.data_form  input {
+    width: 350px;
+    height: 25px;
+}
