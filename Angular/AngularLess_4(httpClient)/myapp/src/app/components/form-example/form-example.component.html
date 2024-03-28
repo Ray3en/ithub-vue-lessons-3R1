@@ -1,0 +1,34 @@
+<form [formGroup]="dataForm" (ngSubmit)='onSubmit()'>
+    <h2>Form example</h2>
+    <div>
+        <label>FirtName</label>
+        <input formControlName="firstName"/>
+        <div *ngIf="dataForm.get('firstName')?.errors && dataForm.get('firstName')?.touched" style="color: red;">
+            <p *ngIf="dataForm.get('firstName')?.errors?.required">Поля обязательно к запаолнению</p>
+            <p *ngIf="dataForm.get('firstName')?.errors?.minlength">Поле должно содержать минимум 5 символов</p>
+        </div>
+    </div>
+    <div>
+        <label>LastName</label>
+        <input formControlName="lastName"/>
+        <div *ngIf="dataForm.get('lastName')?.errors && dataForm.get('lastName')?.touched" style="color: red;">
+            <p *ngIf="dataForm.get('lastName')?.errors?.required">Поля обязательно к запаолнению</p>
+        </div>
+    </div>
+    <div>
+        <label>Password</label>
+        <input formControlName="password"/>
+        <div *ngIf="dataForm.get('password')?.errors && dataForm.get('password')?.touched" style="color: red;">
+            <p *ngIf="dataForm.get('password')?.errors?.required">Поля обязательно к запаолнению</p>
+        </div>
+    </div>
+    <div>
+        <label>Second password</label>
+        <input formControlName="secondPassword"/>
+        <div *ngIf="(dataForm?.errors || dataForm.get('secondPassword')?.errors) && dataForm.get('secondPassword')?.touched" style="color: red;">
+            <p *ngIf="dataForm.get('secondPassword')?.errors?.required">Поля обязательно к запаолнению</p>
+            <p *ngIf="dataForm?.errors?.invalidPass">Пароль не соответствует паролю выше</p>
+        </div>
+    </div>
+    <input type="submit"/>
+</form>

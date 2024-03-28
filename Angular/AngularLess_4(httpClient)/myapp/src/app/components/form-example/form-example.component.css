@@ -1,0 +1,13 @@
+form{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    border: 1px solid black;
+}
+
+form > div {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
