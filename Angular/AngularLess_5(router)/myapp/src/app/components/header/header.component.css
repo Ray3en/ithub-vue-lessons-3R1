@@ -1,0 +1,30 @@
+header {
+   padding: 50px 0px; 
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   background-color: cadetblue;
+}
+
+.logo{
+    width: 40px;
+    height: 40px;
+    border-radius: 35%;
+    background-color: burlywood;
+}
+
+.menu_wrapper{
+    display: flex;
+    gap: 35px;
+    list-style-type: none;
+    color: beige;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a.active{
+    color: purple
+}

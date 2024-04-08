@@ -1,0 +1,5 @@
+<ul>
+    @for(user of usersService.users; track user.id){
+        <li [routerLink]="'/about/'+ user.id">{{user.name}}</li>
+    }
+</ul>
