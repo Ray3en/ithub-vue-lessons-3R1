@@ -1,0 +1,2 @@
+ng new myapp --no-standalone
+ng new myapp --version=14

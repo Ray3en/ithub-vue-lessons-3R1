@@ -1,0 +1,10 @@
+ul {
+    display: flex;
+    gap: 35px;
+    list-style-type: none;
+    padding: 30px;
+}
+
+div {
+    background-color: chocolate;
+}
