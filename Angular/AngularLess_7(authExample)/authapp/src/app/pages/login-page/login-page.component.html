@@ -1,0 +1,7 @@
+<div class="form_wrapper">
+    <form [formGroup]="dataForm" (ngSubmit)="onSubmit()" class="login_form">
+        <input formControlName="username" placeholder="login"/>
+        <input formControlName="password" placeholder="password"/>
+        <input type="submit"/>
+    </form>
+</div>
